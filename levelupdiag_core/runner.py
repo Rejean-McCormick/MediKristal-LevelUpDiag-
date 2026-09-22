@@ -40,7 +40,15 @@ def _result_for_blocked(meta, run_id, target, deps):
     }
 
 
-def run_campaign(tool_root: Path, selection: str, target_override=None, jobs=None, fail_fast=None):
+def run_campaign(tool_root: Path, selection: str, target_override=None, jobs=None, fail_fast=None, progress_callback=None):
+    def emit(event, **payload):
+        if progress_callback is None:
+            return
+        try:
+            progress_callback(event, payload)
+        except Exception:
+            # Diagnostics must not fail because a presentation-layer callback failed.
+            pass
     manifest = load_manifest(tool_root)
     cfg = load_config(tool_root, target_override)
     levels = resolve_selection(manifest, selection)
@@ -51,6 +59,8 @@ def run_campaign(tool_root: Path, selection: str, target_override=None, jobs=Non
     run_root.mkdir(parents=True, exist_ok=True)
     started = utc_now()
     write_json(run_root / "effective_config.json", {k:v for k,v in cfg.items() if not k.startswith("_")})
+    emit("campaign_started", run_id=run_id, selection=selection, target=str(target),
+         levels=[m["id"] for m in levels], total=len(levels), run_root=str(run_root))
 
     before_vcs = git_info(target) if cfg.get("execution",{}).get("protect_tracked_files", True) else None
     max_jobs = int(jobs or cfg.get("execution",{}).get("max_parallel", 4) or 1)
@@ -67,9 +77,12 @@ def run_campaign(tool_root: Path, selection: str, target_override=None, jobs=Non
         out = run_root / "levels" / meta["id"] / "result.json"
         out.parent.mkdir(parents=True, exist_ok=True)
         write_json(out, data)
+        emit("level_finished", level_id=meta["id"], name=meta["name"],
+             verdict=data.get("verdict", "ERROR"), result=str(out))
         return data
 
     def launch(meta):
+        emit("level_started", level_id=meta["id"], name=meta["name"])
         level_dir = run_root / "levels" / meta["id"]
         level_dir.mkdir(parents=True, exist_ok=True)
         out = level_dir / "result.json"
@@ -95,6 +108,8 @@ def run_campaign(tool_root: Path, selection: str, target_override=None, jobs=Non
                 write_json(out, data)
             data.setdefault("metrics", {})["worker_duration_seconds"] = round(time.monotonic()-started_mono, 3)
             write_json(out, data)
+            emit("level_finished", level_id=meta["id"], name=meta["name"],
+                 verdict=data.get("verdict", "ERROR"), result=str(out))
             return data
         except subprocess.TimeoutExpired as e:
             now = utc_now()
@@ -105,7 +120,10 @@ def run_campaign(tool_root: Path, selection: str, target_override=None, jobs=Non
                                  "message":f"Level exceeded its {timeout}s timeout.",
                                  "recommendation":"Increase the timeout only if the level is expected to require more time."}],
                     "artifacts":[],"metrics":{"worker_duration_seconds":round(time.monotonic()-started_mono,3)}}
-            write_json(out, data); return data
+            write_json(out, data)
+            emit("level_finished", level_id=meta["id"], name=meta["name"],
+                 verdict=data.get("verdict", "INFRA_ERROR"), result=str(out))
+            return data
 
     try:
         while pending or active:
@@ -192,4 +210,7 @@ def run_campaign(tool_root: Path, selection: str, target_override=None, jobs=Non
         dst = latest / r["level_id"] / "result.json"
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, dst)
-    return summary, exit_code(verdict), run_root
+    code = exit_code(verdict)
+    emit("campaign_finished", run_id=run_id, selection=selection, verdict=verdict,
+         counts=counts, run_root=str(run_root), exit_code=code)
+    return summary, code, run_root

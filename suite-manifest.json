@@ -1,6 +1,6 @@
 {
   "format": "levelupdiag-medikristal.manifest/1",
-  "suite_version": "1.0.0",
+  "suite_version": "1.1.0",
   "files": [
     {
       "path": ".gitignore",
@@ -13,9 +13,14 @@
       "sha256": "db65ec8b3bc84021eaf70b754359ecd33837e3522bb2da586fec20be09dfffed"
     },
     {
+      "path": "LevelUpDiag-MediKristal.pyw",
+      "bytes": 89,
+      "sha256": "871a812bc9b453f3f90373adaf87e36ef84ee72e9461335afa07f200fd23446c"
+    },
+    {
       "path": "README.md",
-      "bytes": 4673,
-      "sha256": "2ed3eee7b23c548cd1af21b59f00cc9d677ff1fd486180b4c5dd8916060c324d"
+      "bytes": 5392,
+      "sha256": "fb3d642c91ea788d8cb744c6145cea02f10a0a67e99db1fcc5971cf57bd5ef7e"
     },
     {
       "path": "RUN_LEVELUPDIAG.bat",
@@ -38,14 +43,19 @@
       "sha256": "1fb3fa600653bc80329be234a3fdd3b000d892f22815d94c79efcc5f926ebc3b"
     },
     {
+      "path": "RUN_LEVELUPDIAG_UI.bat",
+      "bytes": 281,
+      "sha256": "00bf8594011d10797f1d7cad59bcbce30ab23911c95f0cf67fa541c2bb153a04"
+    },
+    {
       "path": "SAMPLE_VALIDATION_MEDIKRISTAL_FINAL.md",
       "bytes": 3006,
       "sha256": "5aa10f4abf3a4c2268e34dd0100c0bce64cfb39c0e494e0f126985c645fa5732"
     },
     {
       "path": "SUITE_VALIDATION.md",
-      "bytes": 1797,
-      "sha256": "bca52ac5f0fd127024af43c69aa6933cc42d09d7609ede28779ddc572a688afa"
+      "bytes": 2266,
+      "sha256": "682faebe54039f1ca940d9d18bffa88367ddd056e82ce535385e7310d91fcc51"
     },
     {
       "path": "docs/ADAPTATION_GUIDE.md",
@@ -190,7 +200,7 @@
     {
       "path": "levelupdiag_core/__init__.py",
       "bytes": 134,
-      "sha256": "b16e66d3d6bcb0166413ab7cc5bb8e3b8bfddcfc175c0604df4f681ace54d161"
+      "sha256": "fe7af6f3a1cae3dbdc40792c9aa0d0ec46931a73c642e5058194b5d799cf3d71"
     },
     {
       "path": "levelupdiag_core/cli.py",
@@ -219,8 +229,8 @@
     },
     {
       "path": "levelupdiag_core/runner.py",
-      "bytes": 10236,
-      "sha256": "b8a66d8d3e4b89f236539b84fdff68d0acddf7485e867abf47684e848892d744"
+      "bytes": 11391,
+      "sha256": "85d474a7dee1c21690c56914296185f81f63af9254811df4560b882fb22f6c65"
     },
     {
       "path": "levelupdiag_core/scanner.py",
@@ -250,7 +260,12 @@
     {
       "path": "levelupdiag_manifest.json",
       "bytes": 8509,
-      "sha256": "0d5945700d2dfc9991bbc14aa34684bc21f493c0b95383135720db8b27b8c4f8"
+      "sha256": "ba2ab2d62771c973261f004c17c3f833f6741986495ef1b45706dc2f8122c724"
+    },
+    {
+      "path": "levelupdiag_ui.py",
+      "bytes": 23399,
+      "sha256": "05c2c2b29dbcc7f9c59898823f7739c2bdd6d5949cd89cdc445e36eea7d60334"
     },
     {
       "path": "probes/runtime_smoke.py",
@@ -260,7 +275,7 @@
     {
       "path": "pyproject.toml",
       "bytes": 253,
-      "sha256": "195829dfc86dd64d23fb024cc0890fc765388e142b23e98fae7482e256d28bd0"
+      "sha256": "9fda879a0800f6dadee31fd4f194a1d0e1eba37df55c60bcb471c386d3068b8c"
     },
     {
       "path": "run_medikristal_zip.py",
@@ -361,6 +376,16 @@
       "path": "tests/test_runner_blocked_results.py",
       "bytes": 739,
       "sha256": "0ab12591606213c718be922839b80bba652760769ad94f30fa59619d5b3ef2ef"
+    },
+    {
+      "path": "tests/test_suite_manifest.py",
+      "bytes": 1208,
+      "sha256": "9aef49617d31c505d74bd014c270a6604a3c691cdcdb01bce31032c2f5a13d45"
+    },
+    {
+      "path": "tests/test_ui_helpers.py",
+      "bytes": 1492,
+      "sha256": "9121607b111558da26afaa7dda82c51cbe890d48a366a68937159e464be083d6"
     },
     {
       "path": "tests/test_verdicts.py",

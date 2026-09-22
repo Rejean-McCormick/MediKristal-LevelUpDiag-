@@ -1,6 +1,6 @@
 # LevelUpDiag-MediKristal
 
-**Version :** 1.0.0  
+**Version :** 1.1.0  
 **Cible :** MediKristal 0.2.0  
 **Mode :** suite de diagnostic autonome, lecture seule par défaut  
 **Dépendances propres :** Python 3.10+ standard library uniquement
@@ -8,6 +8,20 @@
 LevelUpDiag-MediKristal adapte le cadre LevelUpDiag au dépôt MediKristal. Son but n'est pas de remplacer `pytest` ou les validateurs du projet : il orchestre les validateurs canoniques et ajoute des contrôles indépendants de contrat, runtime, migration, packaging, provenance, reproductibilité et cohérence des preuves de livraison.
 
 La suite ne prétend **pas** valider cliniquement MediKristal. Les données et parcours exercés sont ceux de l'implémentation d'ingénierie/synthétique.
+
+## Interface graphique Windows (`.pyw`)
+
+Double-cliquer sur `LevelUpDiag-MediKristal.pyw`, ou lancer `RUN_LEVELUPDIAG_UI.bat`. L'interface permet de :
+
+- choisir un dépôt MediKristal extrait ou une archive ZIP ;
+- choisir `baseline`, `software`, `delivery`, `release` ou `deep` ;
+- régler le parallélisme (`jobs`) et `fail-fast` ;
+- suivre chaque niveau en temps réel ;
+- consulter les verdicts et les findings ;
+- ouvrir le dossier de preuves et `summary.json` ;
+- copier un résumé texte dans le presse-papiers.
+
+L'UI utilise uniquement Tkinter/stdlib. Pour un ZIP, l'extraction est temporaire et protégée contre les chemins de type `../`; les preuves sont copiées sous `levelupdiag_zip_runs/` par défaut.
 
 ## Utilisation rapide
 

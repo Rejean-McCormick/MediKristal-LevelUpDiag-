@@ -10,9 +10,9 @@ Commande :
 python -m unittest discover -s tests -v
 ```
 
-Résultat : **11/11 tests PASS**.
+Résultat : **14/14 tests PASS**.
 
-La couverture de ces auto-tests vise le moteur de verdict, la résolution du manifeste, l'exécution de commandes sans shell, le profil MediKristal, la persistance des résultats synthétiques `fail-fast` et la sécurité du lanceur ZIP.
+La couverture de ces auto-tests vise le moteur de verdict, la résolution du manifeste, l'exécution de commandes sans shell, le profil MediKristal, la persistance des résultats synthétiques `fail-fast` et la sécurité du lanceur ZIP, ainsi que les helpers de l'interface graphique `.pyw`.
 
 ## Validation fonctionnelle contre MediKristal
 
@@ -40,3 +40,9 @@ Les niveaux release ont ensuite été exécutés individuellement pour conserver
 Le chemin `release --fail-fast` a aussi été exercé après correction du runner : verdict **FAIL**, code de sortie **10**, et un `result.json` est présent pour chaque niveau, y compris ceux bloqués par fail-fast.
 
 Voir `SAMPLE_VALIDATION_MEDIKRISTAL_FINAL.md` et `sample-results/` pour les preuves d'exemple.
+
+## Validation de l'interface graphique
+
+- `levelupdiag_ui.py` et `LevelUpDiag-MediKristal.pyw` passent `py_compile`.
+- Le runner a été exercé avec le callback UI sur une vraie campagne `baseline` : 8 événements `level_started`, 8 `level_finished`, puis `campaign_finished`.
+- Le démarrage visuel n'est pas automatisé dans cet environnement sans bureau graphique ; le code cible Tkinter 8.6 / Python 3.10+.
