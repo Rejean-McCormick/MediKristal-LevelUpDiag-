@@ -1,0 +1,117 @@
+{
+  "schema": "levelupdiag.campaign-summary.v2",
+  "standard": "LevelUpDiag",
+  "standard_version": "1.0.0",
+  "run_id": "20260922T223858Z-cfb76f19",
+  "selection": "software",
+  "target_repo_root": "/mnt/data/medikristal_fresh/MediKristal",
+  "started_at": "2026-09-22T22:38:58+00:00",
+  "ended_at": "2026-09-22T22:39:16+00:00",
+  "verdict": "WARN",
+  "counts": {
+    "FAIL": 0,
+    "INFRA_ERROR": 0,
+    "ERROR": 0,
+    "SKIP": 0,
+    "PASS": 10,
+    "PARTIAL": 0,
+    "BLOCKED": 0,
+    "CONFIG_ERROR": 0,
+    "WARN": 1
+  },
+  "expected_levels": [
+    "N00",
+    "N01",
+    "N02",
+    "N03",
+    "N04",
+    "N05",
+    "N06",
+    "MK10",
+    "MK20",
+    "MK30",
+    "MK40"
+  ],
+  "required_levels": [
+    "N00",
+    "N01",
+    "N02",
+    "N03",
+    "N04",
+    "N05",
+    "N06",
+    "MK10",
+    "MK20",
+    "MK30",
+    "MK40"
+  ],
+  "levels": [
+    {
+      "id": "N00",
+      "name": "Diagnostic Integrity",
+      "verdict": "PASS",
+      "result": "levels/N00/result.json"
+    },
+    {
+      "id": "N01",
+      "name": "Target Context",
+      "verdict": "WARN",
+      "result": "levels/N01/result.json"
+    },
+    {
+      "id": "N02",
+      "name": "Repository Inventory",
+      "verdict": "PASS",
+      "result": "levels/N02/result.json"
+    },
+    {
+      "id": "N03",
+      "name": "Repository Hygiene",
+      "verdict": "PASS",
+      "result": "levels/N03/result.json"
+    },
+    {
+      "id": "N04",
+      "name": "Tooling Discovery",
+      "verdict": "PASS",
+      "result": "levels/N04/result.json"
+    },
+    {
+      "id": "N05",
+      "name": "Canonical Software Validators",
+      "verdict": "PASS",
+      "result": "levels/N05/result.json"
+    },
+    {
+      "id": "N06",
+      "name": "Security Hygiene",
+      "verdict": "PASS",
+      "result": "levels/N06/result.json"
+    },
+    {
+      "id": "MK10",
+      "name": "MediKristal Identity and Layout",
+      "verdict": "PASS",
+      "result": "levels/MK10/result.json"
+    },
+    {
+      "id": "MK20",
+      "name": "Contract and Traceability Integrity",
+      "verdict": "PASS",
+      "result": "levels/MK20/result.json"
+    },
+    {
+      "id": "MK30",
+      "name": "Runtime API Smoke",
+      "verdict": "PASS",
+      "result": "levels/MK30/result.json"
+    },
+    {
+      "id": "MK40",
+      "name": "Migration Cycle",
+      "verdict": "PASS",
+      "result": "levels/MK40/result.json"
+    }
+  ],
+  "target_protection": null
+}

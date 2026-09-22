@@ -1,0 +1,15 @@
+LevelUpDiag software - WARN
+Run: 20260922T223858Z-cfb76f19
+Target: /mnt/data/medikristal_fresh/MediKristal
+
+N00  PASS         Diagnostic Integrity
+N01  WARN         Target Context
+N02  PASS         Repository Inventory
+N03  PASS         Repository Hygiene
+N04  PASS         Tooling Discovery
+N05  PASS         Canonical Software Validators
+N06  PASS         Security Hygiene
+MK10  PASS         MediKristal Identity and Layout
+MK20  PASS         Contract and Traceability Integrity
+MK30  PASS         Runtime API Smoke
+MK40  PASS         Migration Cycle

@@ -1,0 +1,16 @@
+{
+  "schema": "levelupdiag.config.v2",
+  "validators": [
+    {
+      "id": "example-validator",
+      "name": "Replace with a real target validator",
+      "command": ["replace-me"],
+      "cwd": ".",
+      "required": false,
+      "timeout_seconds": 300,
+      "mutates_target": false,
+      "network": false,
+      "enabled": false
+    }
+  ]
+}

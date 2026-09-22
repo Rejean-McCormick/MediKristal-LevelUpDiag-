@@ -1,0 +1,106 @@
+{
+  "schema": "levelupdiag.report.v2",
+  "standard": "LevelUpDiag",
+  "standard_version": "1.0.0",
+  "run_id": "finalcheck",
+  "level_id": "MK60",
+  "level_name": "Generated Artifact Reproducibility",
+  "purpose": "Regenerate contracts, validation evidence, runtime assets, SBOM and manifest in a temporary copy and detect checked-in drift without mutating the target.",
+  "target_repo_root": "/mnt/data/medikristal_fresh/MediKristal",
+  "started_at": "2026-09-22T22:34:19+00:00",
+  "ended_at": "2026-09-22T22:34:23+00:00",
+  "verdict": "FAIL",
+  "findings": [
+    {
+      "id": "medikristal.reproducibility.generators_execute",
+      "verdict": "PASS",
+      "category": "reproducibility",
+      "message": "Canonical generators and compileall execute successfully in a disposable repository copy.",
+      "evidence": [
+        {
+          "step": "build_contracts.py",
+          "exit_code": 0,
+          "timed_out": false,
+          "stdout_tail": "{\"schemas\": 107, \"operations\": 80, \"examples\": 12}\n",
+          "stderr_tail": ""
+        },
+        {
+          "step": "validate_reference.py",
+          "exit_code": 0,
+          "timed_out": false,
+          "stdout_tail": "{\"pass\": 208, \"fail\": 0, \"schemas\": 107, \"operations\": 80, \"examples\": 12, \"chapters\": 33}\n",
+          "stderr_tail": ""
+        },
+        {
+          "step": "sync_runtime_assets.py",
+          "exit_code": 0,
+          "timed_out": false,
+          "stdout_tail": "runtime assets synchronized\n",
+          "stderr_tail": ""
+        },
+        {
+          "step": "build_sbom.py",
+          "exit_code": 0,
+          "timed_out": false,
+          "stdout_tail": "{\"components\": 8, \"output\": \"sbom.cdx.json\"}\n",
+          "stderr_tail": ""
+        },
+        {
+          "step": "build_manifest.py",
+          "exit_code": 0,
+          "timed_out": false,
+          "stdout_tail": "{\"files\": 122}\n",
+          "stderr_tail": ""
+        },
+        {
+          "step": "compileall",
+          "exit_code": 0,
+          "timed_out": false,
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      ]
+    },
+    {
+      "id": "medikristal.reproducibility.generated_files",
+      "verdict": "FAIL",
+      "category": "reproducibility",
+      "message": "One or more checked-in generated artifacts are stale relative to canonical generators.",
+      "evidence": {
+        "drift": [
+          {
+            "path": "validation-report.json",
+            "checked_in_sha256": "83f6023b799c3996e7021a884906d96d004cb261cf3ab0a18ca0b84c75da0f34",
+            "regenerated_sha256": "73d42808108506c38c372fe09b7fedf089faadc195fb11891cd6bfa14b696e12"
+          },
+          {
+            "path": "VALIDATION.md",
+            "checked_in_sha256": "f8ad0c13c7df7ea60adeeac95902ed79bf975d95d00277be6a7c7f3503ec962d",
+            "regenerated_sha256": "8ea7bb31167ccbd93be21dac53b5635634a42b3acb617b2f68d4d54f69f1989b"
+          },
+          {
+            "path": "manifest.json",
+            "checked_in_sha256": "a01611e2c235762c2b36da5ef7f8644808ef5af82183ee15fbc0a2690eafeb41",
+            "regenerated_sha256": "519abee3291a196ceb33784556e61584a53bca06a82588493af96fc373bcaa35"
+          }
+        ],
+        "fresh_validation_counts": {
+          "pass": 208,
+          "fail": 0,
+          "schemas": 107,
+          "operations": 80,
+          "examples": 12,
+          "chapters": 33
+        }
+      },
+      "recommendation": "Regenerate the delivery evidence and manifest together, then rerun the release campaign."
+    }
+  ],
+  "artifacts": [],
+  "metrics": {
+    "generated_files_checked": 13,
+    "drifted_generated_files": 3,
+    "fresh_documentary_pass": 208,
+    "fresh_documentary_fail": 0
+  }
+}

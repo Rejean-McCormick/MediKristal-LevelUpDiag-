@@ -1,0 +1,112 @@
+{
+  "schema": "levelupdiag.report.v2",
+  "standard": "LevelUpDiag",
+  "standard_version": "1.0.0",
+  "run_id": "speed",
+  "level_id": "MK70",
+  "level_name": "Delivery Claims Consistency",
+  "purpose": "Cross-check documented test/contract counts against fresh collection and generated validation evidence, keeping software and documentary evidence distinct.",
+  "target_repo_root": "/mnt/data/medikristal_fresh/MediKristal",
+  "started_at": "2026-09-22T22:35:46+00:00",
+  "ended_at": "2026-09-22T22:36:03+00:00",
+  "verdict": "FAIL",
+  "findings": [
+    {
+      "id": "medikristal.evidence.test_collection",
+      "verdict": "PASS",
+      "category": "evidence",
+      "message": "Fresh pytest collection matches the declared application test count.",
+      "evidence": {
+        "expected": 73,
+        "actual": 73,
+        "exit_code": 0,
+        "tail": "test_acceptance_matrix_explicit.py: 3\ntest_completion_depth.py: 7\ntest_consolidated_regressions.py: 11\ntest_contract_runtime_parity.py: 4\ntest_core_acceptance.py: 5\ntest_integrity_expanded.py: 13\ntest_operational_depth.py: 7\ntest_provider_budget.py: 1\ntest_resources_and_followup.py: 4\ntest_security_and_modes.py: 5\ntest_treatment_contributions_workflow.py: 3\ntest_ui_and_runtime_hardening.py: 10\n\n\n"
+      }
+    },
+    {
+      "id": "medikristal.evidence.documented_counts_consistent",
+      "verdict": "FAIL",
+      "category": "evidence",
+      "message": "One or more delivery documents contain stale validation counts.",
+      "evidence": {
+        "claims": [
+          [
+            "APP_VALIDATION tests",
+            73
+          ],
+          [
+            "IMPLEMENTATION tests",
+            73
+          ],
+          [
+            "APP_VALIDATION documentary",
+            211
+          ],
+          [
+            "IMPLEMENTATION documentary",
+            211
+          ],
+          [
+            "VALIDATION documentary",
+            211
+          ]
+        ],
+        "checked_in_validation_report": {
+          "pass": 211,
+          "fail": 0,
+          "schemas": 107,
+          "operations": 80,
+          "examples": 12,
+          "chapters": 33
+        },
+        "fresh_validation_report": {
+          "pass": 208,
+          "fail": 0,
+          "schemas": 107,
+          "operations": 80,
+          "examples": 12,
+          "chapters": 33
+        },
+        "mismatches": [
+          {
+            "claim": "APP_VALIDATION documentary",
+            "documented": 211,
+            "fresh": 208
+          },
+          {
+            "claim": "IMPLEMENTATION documentary",
+            "documented": 211,
+            "fresh": 208
+          },
+          {
+            "claim": "VALIDATION documentary",
+            "documented": 211,
+            "fresh": 208
+          }
+        ]
+      },
+      "recommendation": "Update validation prose only after regenerating and rerunning the corresponding evidence."
+    },
+    {
+      "id": "medikristal.evidence.coverage_remeasure",
+      "verdict": "FAIL",
+      "category": "evidence",
+      "message": "Fresh coverage differs from the documented value or required minimum.",
+      "evidence": {
+        "global_percent": 87.24299065420561,
+        "global_rounded": 87,
+        "api_percent": 86.24567474048443,
+        "api_rounded": 86,
+        "documented_global": 91,
+        "documented_api": 86,
+        "minimum": 90.0
+      }
+    }
+  ],
+  "artifacts": [],
+  "metrics": {
+    "tests_collected": 73,
+    "coverage_percent": 87.24,
+    "api_coverage_percent": 86.25
+  }
+}

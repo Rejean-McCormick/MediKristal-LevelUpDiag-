@@ -1,0 +1,58 @@
+{
+  "schema": "levelupdiag.report.v2",
+  "standard": "LevelUpDiag",
+  "standard_version": "1.0.0",
+  "run_id": "finalcheck",
+  "level_id": "N05",
+  "level_name": "Canonical Software Validators",
+  "purpose": "Execute explicit MediKristal validators: application tests, Python compilation and JavaScript syntax.",
+  "target_repo_root": "/mnt/data/medikristal_fresh/MediKristal",
+  "started_at": "2026-09-22T22:34:53+00:00",
+  "ended_at": "2026-09-22T22:35:01+00:00",
+  "verdict": "PASS",
+  "findings": [
+    {
+      "id": "validator.medikristal-pytest.result",
+      "verdict": "PASS",
+      "category": "validation",
+      "message": "Validator 'MediKristal application test suite' completed.",
+      "evidence": {
+        "argv": [
+          "python",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider"
+        ],
+        "cwd": "/mnt/data/medikristal_fresh/MediKristal/backend",
+        "exit_code": 0,
+        "timed_out": false,
+        "duration_seconds": 7.906,
+        "stdout_tail": "........................................................................ [ 98%]\n.                                                                        [100%]\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "id": "validator.medikristal-frontend-js.result",
+      "verdict": "PASS",
+      "category": "validation",
+      "message": "Validator 'MediKristal frontend JavaScript syntax' completed.",
+      "evidence": {
+        "argv": [
+          "node",
+          "--check",
+          "frontend/app.js"
+        ],
+        "cwd": "/mnt/data/medikristal_fresh/MediKristal",
+        "exit_code": 0,
+        "timed_out": false,
+        "duration_seconds": 0.025,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      }
+    }
+  ],
+  "artifacts": [],
+  "metrics": {}
+}

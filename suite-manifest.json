@@ -1,0 +1,376 @@
+{
+  "format": "levelupdiag-medikristal.manifest/1",
+  "suite_version": "1.0.0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 82,
+      "sha256": "f6d1f18015145f6cefad7ab9e309e0bb924a38cd04175d64a94e88760d7730be"
+    },
+    {
+      "path": ".smartignore",
+      "bytes": 33,
+      "sha256": "db65ec8b3bc84021eaf70b754359ecd33837e3522bb2da586fec20be09dfffed"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4673,
+      "sha256": "2ed3eee7b23c548cd1af21b59f00cc9d677ff1fd486180b4c5dd8916060c324d"
+    },
+    {
+      "path": "RUN_LEVELUPDIAG.bat",
+      "bytes": 78,
+      "sha256": "19ee0757dd3cea4f7c75d082556161737379ce6bc3eb54700e5e26e8969b8315"
+    },
+    {
+      "path": "RUN_LEVELUPDIAG.sh",
+      "bytes": 77,
+      "sha256": "46c9daa0c8c1a62127ff352c47ff01110113d10b6b9d85d1e04184efbf1bfdc8"
+    },
+    {
+      "path": "RUN_LEVELUPDIAG_MEDIKRISTAL.bat",
+      "bytes": 278,
+      "sha256": "2d00afa61d377964aa320d3471f6de1eb61b91deb5660786467281ffdb14a290"
+    },
+    {
+      "path": "RUN_LEVELUPDIAG_MEDIKRISTAL.sh",
+      "bytes": 308,
+      "sha256": "1fb3fa600653bc80329be234a3fdd3b000d892f22815d94c79efcc5f926ebc3b"
+    },
+    {
+      "path": "SAMPLE_VALIDATION_MEDIKRISTAL_FINAL.md",
+      "bytes": 3006,
+      "sha256": "5aa10f4abf3a4c2268e34dd0100c0bce64cfb39c0e494e0f126985c645fa5732"
+    },
+    {
+      "path": "SUITE_VALIDATION.md",
+      "bytes": 1797,
+      "sha256": "bca52ac5f0fd127024af43c69aa6933cc42d09d7609ede28779ddc572a688afa"
+    },
+    {
+      "path": "docs/ADAPTATION_GUIDE.md",
+      "bytes": 978,
+      "sha256": "e744f1f35d0dacfac16ddd0f8c850c0e4a260fb94205238f24f1b14726c61c80"
+    },
+    {
+      "path": "docs/AI_ADAPTATION_CONTRACT.json",
+      "bytes": 1167,
+      "sha256": "2dea0cfc450327987a90b7a8d2173e30907be5cdc68243d27a4b52d5779e8411"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 1105,
+      "sha256": "fe67e5fb44f57024634585a64154e58a5a1459760b3caf78065dd4a4e82181dc"
+    },
+    {
+      "path": "docs/CONFIG_REFERENCE.md",
+      "bytes": 986,
+      "sha256": "1b94aa7b616396ebdf267dd6874db08d50d2c6d6fefbd9bab427aff2a461112e"
+    },
+    {
+      "path": "docs/LEVEL_CONTRACT.md",
+      "bytes": 1355,
+      "sha256": "2eacb2740c3f5b680039bf2c8e385d64549f9596c9c455ba020d99f8b80d76f8"
+    },
+    {
+      "path": "docs/MEDIKRISTAL_VALIDATION_MODEL.md",
+      "bytes": 2189,
+      "sha256": "e2a211ac5d200cc6e4e5efde7b566296d04ce0b5f3114d3b45e666e965390c6e"
+    },
+    {
+      "path": "docs/RESULT_MODEL.md",
+      "bytes": 866,
+      "sha256": "88889c3ee567b5f8c36399e0c25204d796703c8158f8bce8858ba6facb2c9ded"
+    },
+    {
+      "path": "docs/SECURITY_MODEL.md",
+      "bytes": 808,
+      "sha256": "94d14cd38a5ff7f20cf40ee7e3a43b99c333418702ce5c6df604d181c148281f"
+    },
+    {
+      "path": "levels/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "levels/_mk_common.py",
+      "bytes": 2983,
+      "sha256": "8bae487b39fd6d82f901fef506db672327de3e9920a6644a06426f1c278e6174"
+    },
+    {
+      "path": "levels/mk10_identity_layout.py",
+      "bytes": 4291,
+      "sha256": "3ea1bdf1d488d9c06a18a6ba074f812a0f0048cd2ee7deb43a44652f19eab6c5"
+    },
+    {
+      "path": "levels/mk20_contract_traceability.py",
+      "bytes": 6650,
+      "sha256": "361d1a4d4de3293eda97baf7e40a5c7395b48b58c3a2b7cdcf0ae7b6f599ae48"
+    },
+    {
+      "path": "levels/mk30_runtime_smoke.py",
+      "bytes": 2681,
+      "sha256": "0acd3fcb218f7f614eb0f896a471b376884e28ea728f3304abf29de271a12a0c"
+    },
+    {
+      "path": "levels/mk40_migrations.py",
+      "bytes": 2302,
+      "sha256": "f9aff2c9bef55b8db8f540e63540c7d599a04c1601ff0080b52d5a636c865603"
+    },
+    {
+      "path": "levels/mk50_packaging.py",
+      "bytes": 5858,
+      "sha256": "8bccbef2f558ae825d1f0af6e63b386c435100f68de5a4ccf95268eee83fad2a"
+    },
+    {
+      "path": "levels/mk60_reproducibility.py",
+      "bytes": 3265,
+      "sha256": "98aa03d1a637836f34bed134201da13a3705ad5f270f63c607b40c6659b1339b"
+    },
+    {
+      "path": "levels/mk70_claims.py",
+      "bytes": 6632,
+      "sha256": "14f5b803b7ec90e329f862234cfaae7a2759cd48a68f4ae92091b1515df0ba87"
+    },
+    {
+      "path": "levels/mk80_deploy.py",
+      "bytes": 3416,
+      "sha256": "655840ba0859b68a5f0b4ade78f88fb6551f11792649200ec481ed90547e931c"
+    },
+    {
+      "path": "levels/n00_diagnostic_integrity.py",
+      "bytes": 1543,
+      "sha256": "5c9426bfa1b8ba98add2ceb02de565dadbd9734de2947ef11fadf670818ead80"
+    },
+    {
+      "path": "levels/n01_target_context.py",
+      "bytes": 2562,
+      "sha256": "191a150e906a85737a69984a818b689d828f8f2baf2608f20964480410f1822a"
+    },
+    {
+      "path": "levels/n02_repository_inventory.py",
+      "bytes": 2237,
+      "sha256": "b08685a674ec5fa647984470127a65b4c3caff84177a5f050257cd6cb7d0ae95"
+    },
+    {
+      "path": "levels/n03_repository_hygiene.py",
+      "bytes": 1965,
+      "sha256": "df66597f468c798f42e50270af823566bf92111d1533151a335c5b1c3ddadcf6"
+    },
+    {
+      "path": "levels/n04_tooling_discovery.py",
+      "bytes": 2428,
+      "sha256": "3cbaa8ec24d3502b06889ab31bbcf7695e3d930363aea8b6c94c9d02c739f10d"
+    },
+    {
+      "path": "levels/n05_declared_validations.py",
+      "bytes": 3050,
+      "sha256": "04c46296bb93580dcb27e1ddf99c77b2d90841bc6a9f10a59eec2db4be8a9f15"
+    },
+    {
+      "path": "levels/n06_security_hygiene.py",
+      "bytes": 3115,
+      "sha256": "de50f8589c9fe8a3f7634aed4d165d7cb5a3f445aae4736c3c835f377307b6f3"
+    },
+    {
+      "path": "levelupdiag.config.json",
+      "bytes": 2564,
+      "sha256": "486b267b3db387063c44f4e622270200ce688a12701078d917536c94e44039b2"
+    },
+    {
+      "path": "levelupdiag.config.local.example.json",
+      "bytes": 346,
+      "sha256": "ca50dcbf2a32f1bfef4a783976ef51f5b5aeb2786f6359c2741ca20b830ed3b1"
+    },
+    {
+      "path": "levelupdiag.py",
+      "bytes": 310,
+      "sha256": "f7de31f5ee50fdfd0f6fdef202dfc08ce8d54a2488c79c2e448fa7a365ccb11f"
+    },
+    {
+      "path": "levelupdiag_core/__init__.py",
+      "bytes": 134,
+      "sha256": "b16e66d3d6bcb0166413ab7cc5bb8e3b8bfddcfc175c0604df4f681ace54d161"
+    },
+    {
+      "path": "levelupdiag_core/cli.py",
+      "bytes": 4183,
+      "sha256": "2e90b770f614dbb518f3d4f9bddefdba801aef6159de8ba479415c9b3e3b1686"
+    },
+    {
+      "path": "levelupdiag_core/commands.py",
+      "bytes": 2025,
+      "sha256": "aeafad0204924212ef702773aa28c46c36c6453b1f61f8ba6d873d462707d5d1"
+    },
+    {
+      "path": "levelupdiag_core/config.py",
+      "bytes": 1788,
+      "sha256": "ee4f81f37d4996fdeda75d119de469f48497f777c322187355b81a7d83f6e6fa"
+    },
+    {
+      "path": "levelupdiag_core/manifest.py",
+      "bytes": 1735,
+      "sha256": "91fcb729d15750dca611881887e67c82f6d89a327ae79d0b0103a8c25ee228b8"
+    },
+    {
+      "path": "levelupdiag_core/report.py",
+      "bytes": 2162,
+      "sha256": "9c2a4709d812ce0d93bc771f5aceb9dc4b974e0a894d60e4ea960d4d2b86504e"
+    },
+    {
+      "path": "levelupdiag_core/runner.py",
+      "bytes": 10236,
+      "sha256": "b8a66d8d3e4b89f236539b84fdff68d0acddf7485e867abf47684e848892d744"
+    },
+    {
+      "path": "levelupdiag_core/scanner.py",
+      "bytes": 971,
+      "sha256": "7c7fd051c8c5fa028f60e50c2ffb6632d5e37b9347cc588b77352cccc1814d6c"
+    },
+    {
+      "path": "levelupdiag_core/util.py",
+      "bytes": 2388,
+      "sha256": "841abbacb06ff6db176263b470b26f9809c1808e44b5c1029c65181e6d827ba3"
+    },
+    {
+      "path": "levelupdiag_core/vcs.py",
+      "bytes": 844,
+      "sha256": "2f69154ba6f41679db72abc649556c38971ba99ced750e5dc4d5c3076add3c88"
+    },
+    {
+      "path": "levelupdiag_core/verdicts.py",
+      "bytes": 1641,
+      "sha256": "9e27eb559a6b950e119b0c674fb96736037ce29b437bd74cf25037a4d5b2b061"
+    },
+    {
+      "path": "levelupdiag_core/worker.py",
+      "bytes": 1466,
+      "sha256": "c47a9d772065314dbbb0a6abbb7f7d7ca59ddb740b64a86589709e91a6bcdb3b"
+    },
+    {
+      "path": "levelupdiag_manifest.json",
+      "bytes": 8509,
+      "sha256": "0d5945700d2dfc9991bbc14aa34684bc21f493c0b95383135720db8b27b8c4f8"
+    },
+    {
+      "path": "probes/runtime_smoke.py",
+      "bytes": 2268,
+      "sha256": "87b8e2e775820056144c595972ea3cf8f5f6b2a707548ccbd15e4aa384757061"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 253,
+      "sha256": "195829dfc86dd64d23fb024cc0890fc765388e142b23e98fae7482e256d28bd0"
+    },
+    {
+      "path": "run_medikristal_zip.py",
+      "bytes": 2509,
+      "sha256": "f7becfb81405b68eed64ca3404af693b025694e2486a4713a619853c7820a633"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK10-result.json",
+      "bytes": 2744,
+      "sha256": "dca49f95f1c408ead1447dd78e204fd6ff37d08db35b6a54bc150bc0914a8a67"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK20-result.json",
+      "bytes": 2780,
+      "sha256": "57dcbc0977176ef55529c69a575d0a183ec0a3df7e303d8f9d6e4d1bf8097c19"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK30-result.json",
+      "bytes": 2341,
+      "sha256": "fab8aa393b3a4cd17352a3db27357a8b155ac4651582605d3fedf7ec683331e1"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK40-result.json",
+      "bytes": 3485,
+      "sha256": "6638ae1b53fccc7be0cfaf4bac6e90a891321b08066bef9b5f08e7e00b8d0b9b"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK50-result.json",
+      "bytes": 2299,
+      "sha256": "990c07d5aa8f352f4a7ced3bd19103114993a5046fc6ce145547a2291f50a5ea"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK60-result.json",
+      "bytes": 3724,
+      "sha256": "0aecc39858ee54d2c8f6226a21c3205daef0a45dbfb1ca847254cbbb92416d20"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK70-result.json",
+      "bytes": 3511,
+      "sha256": "ada6233e67f30db530ec89c0f3f32915e87fc85a7d199d63c3314750d4cac8d5"
+    },
+    {
+      "path": "sample-results/2026-09-22/MK80-result.json",
+      "bytes": 2397,
+      "sha256": "dc52d7518db6d3f0f4e0d477343138240ab6aee65cd7b69bfcbc2ebbc0f1eb71"
+    },
+    {
+      "path": "sample-results/2026-09-22/N05-result.json",
+      "bytes": 1815,
+      "sha256": "73d40cc81df67b37e74492995e696d7cbd365d2134a79e56335471039fdb3e7f"
+    },
+    {
+      "path": "sample-results/2026-09-22/software-summary.json",
+      "bytes": 2395,
+      "sha256": "8c913010f888ee822e161e1365d5201dfb4d756474cc215dda7a8489bf8190dd"
+    },
+    {
+      "path": "sample-results/2026-09-22/software-summary.txt",
+      "bytes": 553,
+      "sha256": "d96203c8a19abcdf2b7bfd830f0504a4b13e2c068221bcbc3fa290588ee179ee"
+    },
+    {
+      "path": "sample-results/README.md",
+      "bytes": 588,
+      "sha256": "c1e26333a3940a0fff37166bbdda45069ce698e81b378e9107f31907a488ea4e"
+    },
+    {
+      "path": "schemas/campaign-summary.schema.json",
+      "bytes": 745,
+      "sha256": "884280bd039b141e0bdbd8a3c41e192c9d545db9e2de332bbcd771461834547f"
+    },
+    {
+      "path": "schemas/report.schema.json",
+      "bytes": 778,
+      "sha256": "0c235324daf05b12f78f66c8c0d3e7e9c05a66481895e087afdd25027a9a7fa1"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_commands.py",
+      "bytes": 429,
+      "sha256": "ba49555964bcd88e52cd0d0732138eb489b25b777da4f0e3e349d66e2dda7647"
+    },
+    {
+      "path": "tests/test_manifest.py",
+      "bytes": 404,
+      "sha256": "e7c16543a7efc9768881fe3350bed7e058cabd73a9b189d092bdd53f22284584"
+    },
+    {
+      "path": "tests/test_medikristal_profile.py",
+      "bytes": 1151,
+      "sha256": "d5e9ee1ae40f7f6a470e3a87e4b23f786de6672648087e8c3579bf2df204d8df"
+    },
+    {
+      "path": "tests/test_runner_blocked_results.py",
+      "bytes": 739,
+      "sha256": "0ab12591606213c718be922839b80bba652760769ad94f30fa59619d5b3ef2ef"
+    },
+    {
+      "path": "tests/test_verdicts.py",
+      "bytes": 595,
+      "sha256": "8e5a43984ccff536e8903097f6f8cf1334feb00935a812bc8e70043d9df201c7"
+    },
+    {
+      "path": "tests/test_zip_runner.py",
+      "bytes": 1026,
+      "sha256": "800dbc150adfa973da19c84680dd7d2fafee9fd7201ea287df562ced45cd6a42"
+    }
+  ]
+}

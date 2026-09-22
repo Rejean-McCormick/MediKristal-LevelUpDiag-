@@ -1,0 +1,313 @@
+{
+  "schema": "levelupdiag.manifest.v2",
+  "standard": "LevelUpDiag",
+  "standard_version": "1.0.0",
+  "suite_name": "LevelUpDiag-MediKristal",
+  "suite_version": "1.0.0",
+  "repository_mode": "standalone-target-diagnostics-suite",
+  "control_dir_default": ".levelupdiag",
+  "levels": [
+    {
+      "id": "N00",
+      "name": "Diagnostic Integrity",
+      "module": "levels.n00_diagnostic_integrity",
+      "category": "diagnostics",
+      "order": 0,
+      "required": true,
+      "depends_on": [],
+      "timeout_seconds": 60,
+      "parallel_safe": true,
+      "purpose": "Validate the diagnostics frame before trusting its output."
+    },
+    {
+      "id": "N01",
+      "name": "Target Context",
+      "module": "levels.n01_target_context",
+      "category": "context",
+      "order": 10,
+      "required": true,
+      "depends_on": [
+        "N00"
+      ],
+      "timeout_seconds": 60,
+      "parallel_safe": true,
+      "purpose": "Resolve target, runtime context, VCS state, paths and basic executability."
+    },
+    {
+      "id": "N02",
+      "name": "Repository Inventory",
+      "module": "levels.n02_repository_inventory",
+      "category": "inventory",
+      "order": 20,
+      "required": true,
+      "depends_on": [
+        "N01"
+      ],
+      "timeout_seconds": 120,
+      "parallel_safe": true,
+      "purpose": "Collect bounded evidence about repository shape and capabilities."
+    },
+    {
+      "id": "N03",
+      "name": "Repository Hygiene",
+      "module": "levels.n03_repository_hygiene",
+      "category": "hygiene",
+      "order": 30,
+      "required": true,
+      "depends_on": [
+        "N02"
+      ],
+      "timeout_seconds": 180,
+      "parallel_safe": true,
+      "purpose": "Detect repository integrity and hygiene hazards."
+    },
+    {
+      "id": "N04",
+      "name": "Tooling Discovery",
+      "module": "levels.n04_tooling_discovery",
+      "category": "tooling",
+      "order": 40,
+      "required": true,
+      "depends_on": [
+        "N02"
+      ],
+      "timeout_seconds": 120,
+      "parallel_safe": true,
+      "purpose": "Discover project manifests, automation surfaces and candidate tools."
+    },
+    {
+      "id": "N05",
+      "name": "Canonical Software Validators",
+      "module": "levels.n05_declared_validations",
+      "category": "validation",
+      "order": 50,
+      "required": true,
+      "depends_on": [
+        "N01",
+        "N02"
+      ],
+      "timeout_seconds": 1800,
+      "parallel_safe": false,
+      "purpose": "Execute explicit MediKristal validators: application tests and frontend JavaScript syntax."
+    },
+    {
+      "id": "N06",
+      "name": "Security Hygiene",
+      "module": "levels.n06_security_hygiene",
+      "category": "security_hygiene",
+      "order": 60,
+      "required": true,
+      "depends_on": [
+        "N02"
+      ],
+      "timeout_seconds": 180,
+      "parallel_safe": true,
+      "purpose": "Perform bounded conservative secret and sensitive-file hygiene checks."
+    },
+    {
+      "id": "MK10",
+      "name": "MediKristal Identity and Layout",
+      "module": "levels.mk10_identity_layout",
+      "category": "medikristal_structure",
+      "order": 100,
+      "required": true,
+      "depends_on": [
+        "N01",
+        "N02"
+      ],
+      "timeout_seconds": 90,
+      "parallel_safe": true,
+      "purpose": "Verify that the target is the expected MediKristal 0.2.0 repository and that required source, contract, UI, migration and test surfaces exist."
+    },
+    {
+      "id": "MK20",
+      "name": "Contract and Traceability Integrity",
+      "module": "levels.mk20_contract_traceability",
+      "category": "medikristal_contracts",
+      "order": 110,
+      "required": true,
+      "depends_on": [
+        "MK10"
+      ],
+      "timeout_seconds": 120,
+      "parallel_safe": true,
+      "purpose": "Independently validate OpenAPI/domain/traceability invariants, runtime asset parity and acceptance-matrix completeness."
+    },
+    {
+      "id": "MK30",
+      "name": "Runtime API Smoke",
+      "module": "levels.mk30_runtime_smoke",
+      "category": "medikristal_runtime",
+      "order": 120,
+      "required": true,
+      "depends_on": [
+        "MK10",
+        "MK20"
+      ],
+      "timeout_seconds": 180,
+      "parallel_safe": false,
+      "purpose": "Boot the FastAPI application on an isolated SQLite database and verify health, readiness, OpenAPI parity, UI serving, security headers and honest capability states."
+    },
+    {
+      "id": "MK40",
+      "name": "Migration Cycle",
+      "module": "levels.mk40_migrations",
+      "category": "medikristal_database",
+      "order": 130,
+      "required": true,
+      "depends_on": [
+        "MK10"
+      ],
+      "timeout_seconds": 240,
+      "parallel_safe": false,
+      "purpose": "Run Alembic upgrade -> downgrade base -> upgrade on a disposable SQLite database and inspect critical integrity tables."
+    },
+    {
+      "id": "MK50",
+      "name": "Packaging and Provenance",
+      "module": "levels.mk50_packaging",
+      "category": "medikristal_delivery",
+      "order": 140,
+      "required": true,
+      "depends_on": [
+        "MK10",
+        "MK20"
+      ],
+      "timeout_seconds": 180,
+      "parallel_safe": true,
+      "purpose": "Verify delivery manifest hashes, wheel checksum/metadata/assets, SBOM-lock agreement and packaged contract/frontend parity."
+    },
+    {
+      "id": "MK60",
+      "name": "Generated Artifact Reproducibility",
+      "module": "levels.mk60_reproducibility",
+      "category": "medikristal_reproducibility",
+      "order": 150,
+      "required": true,
+      "depends_on": [
+        "MK20"
+      ],
+      "timeout_seconds": 300,
+      "parallel_safe": false,
+      "purpose": "Regenerate contracts, validation evidence, runtime assets, SBOM and manifest in a temporary copy and detect checked-in drift without mutating the target."
+    },
+    {
+      "id": "MK70",
+      "name": "Delivery Claims Consistency",
+      "module": "levels.mk70_claims",
+      "category": "medikristal_evidence",
+      "order": 160,
+      "required": true,
+      "depends_on": [
+        "N05",
+        "MK20"
+      ],
+      "timeout_seconds": 240,
+      "parallel_safe": false,
+      "purpose": "Cross-check documented test/contract counts against fresh collection and generated validation evidence, keeping software and documentary evidence distinct."
+    },
+    {
+      "id": "MK80",
+      "name": "Deployment Configuration",
+      "module": "levels.mk80_deploy",
+      "category": "medikristal_operations",
+      "order": 170,
+      "required": true,
+      "depends_on": [
+        "MK10"
+      ],
+      "timeout_seconds": 120,
+      "parallel_safe": true,
+      "purpose": "Validate Compose topology, secret handling, non-root container intent and explicit external-integration limitations without starting Docker."
+    }
+  ],
+  "campaigns": {
+    "baseline": {
+      "description": "Read-oriented repository and MediKristal identity diagnostics.",
+      "levels": [
+        "N00",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N06",
+        "MK10",
+        "MK20"
+      ]
+    },
+    "software": {
+      "description": "Baseline plus canonical software validators, runtime smoke and migration cycle.",
+      "levels": [
+        "N00",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "MK10",
+        "MK20",
+        "MK30",
+        "MK40"
+      ]
+    },
+    "delivery": {
+      "description": "Software validation plus packaging/provenance and deployment configuration.",
+      "levels": [
+        "N00",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "MK10",
+        "MK20",
+        "MK30",
+        "MK40",
+        "MK50",
+        "MK80"
+      ]
+    },
+    "release": {
+      "description": "Full non-network release evidence including reproducibility and claims consistency.",
+      "levels": [
+        "N00",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "MK10",
+        "MK20",
+        "MK30",
+        "MK40",
+        "MK50",
+        "MK60",
+        "MK70",
+        "MK80"
+      ]
+    },
+    "deep": {
+      "description": "Alias of the full release evidence campaign.",
+      "levels": [
+        "N00",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "MK10",
+        "MK20",
+        "MK30",
+        "MK40",
+        "MK50",
+        "MK60",
+        "MK70",
+        "MK80"
+      ]
+    }
+  }
+}

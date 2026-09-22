@@ -1,0 +1,73 @@
+{
+  "schema": "levelupdiag.report.v2",
+  "standard": "LevelUpDiag",
+  "standard_version": "1.0.0",
+  "run_id": "finalcheck",
+  "level_id": "MK30",
+  "level_name": "Runtime API Smoke",
+  "purpose": "Boot the FastAPI application on an isolated SQLite database and verify health, readiness, OpenAPI parity, UI serving, security headers and honest capability states.",
+  "target_repo_root": "/mnt/data/medikristal_fresh/MediKristal",
+  "started_at": "2026-09-22T22:34:04+00:00",
+  "ended_at": "2026-09-22T22:34:07+00:00",
+  "verdict": "PASS",
+  "findings": [
+    {
+      "id": "medikristal.runtime.smoke",
+      "verdict": "PASS",
+      "category": "runtime",
+      "message": "Isolated FastAPI runtime smoke passed.",
+      "evidence": {
+        "checks": {
+          "health": true,
+          "ready": true,
+          "openapi_exact": true,
+          "ui": true,
+          "capabilities": true,
+          "problem_json": true,
+          "security_headers": true
+        },
+        "details": {
+          "capabilities": {
+            "cases": "available",
+            "observations": "available",
+            "synthetic_inference": "available",
+            "workflows": "available",
+            "planning": "available",
+            "resources": "available",
+            "treatment_options": "available",
+            "followup": "available",
+            "knowledge_registry": "available",
+            "contributions": "available",
+            "provider_network": "unavailable",
+            "fhir_partner": "not_configured",
+            "kristal_export": "not_configured"
+          },
+          "runtime_api_routes": 80
+        }
+      }
+    },
+    {
+      "id": "medikristal.runtime.external_capabilities_honest",
+      "verdict": "PASS",
+      "category": "runtime",
+      "message": "External/partner capabilities are not advertised as available without configuration.",
+      "evidence": {
+        "provider_network": "unavailable",
+        "fhir_partner": "not_configured",
+        "kristal_export": "not_configured"
+      }
+    },
+    {
+      "id": "medikristal.runtime.route_count",
+      "verdict": "PASS",
+      "category": "runtime",
+      "message": "Runtime route count matches the OpenAPI operation contract.",
+      "evidence": {
+        "expected": 80,
+        "actual": 80
+      }
+    }
+  ],
+  "artifacts": [],
+  "metrics": {}
+}

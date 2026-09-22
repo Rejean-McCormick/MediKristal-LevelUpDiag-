@@ -1,0 +1,20 @@
+{
+  "schema": "levelupdiag.ai-adaptation-contract.v1",
+  "objective": "Maintain LevelUpDiag-MediKristal as a target-specific, non-clinical validation suite for MediKristal 0.2.0 and later explicitly profiled versions.",
+  "invariants": [
+    "Prefer MediKristal canonical validators before duplicating their logic.",
+    "Keep the target read-only by default; run mutating generators in a disposable copy.",
+    "Keep software, documentary, packaging, provenance and deployment evidence distinct.",
+    "Do not accept required SKIP, BLOCKED or PARTIAL as PASS.",
+    "Do not advertise unconfigured external capabilities as successful.",
+    "Do not infer clinical, regulatory, PostgreSQL, Docker or partner qualification from local synthetic tests.",
+    "Use stable finding IDs and bounded/redacted evidence.",
+    "Treat documented counts and generated evidence as claims to remeasure, not as authorities about themselves."
+  ],
+  "profile": {
+    "target": "MediKristal",
+    "version": "0.2.0",
+    "campaigns": ["baseline", "software", "delivery", "release", "deep"],
+    "specific_levels": ["MK10", "MK20", "MK30", "MK40", "MK50", "MK60", "MK70", "MK80"]
+  }
+}
