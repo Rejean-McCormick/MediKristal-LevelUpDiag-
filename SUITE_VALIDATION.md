@@ -10,7 +10,7 @@ Commande :
 python -m unittest discover -s tests -v
 ```
 
-Résultat : **14/14 tests PASS**.
+Résultat : **15/15 tests PASS**.
 
 La couverture de ces auto-tests vise le moteur de verdict, la résolution du manifeste, l'exécution de commandes sans shell, le profil MediKristal, la persistance des résultats synthétiques `fail-fast` et la sécurité du lanceur ZIP, ainsi que les helpers de l'interface graphique `.pyw`.
 

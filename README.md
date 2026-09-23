@@ -1,6 +1,6 @@
 # LevelUpDiag-MediKristal
 
-**Version :** 1.1.0  
+**Version :** 1.1.2  
 **Cible :** MediKristal 0.2.0  
 **Mode :** suite de diagnostic autonome, lecture seule par défaut  
 **Dépendances propres :** Python 3.10+ standard library uniquement
@@ -12,6 +12,8 @@ La suite ne prétend **pas** valider cliniquement MediKristal. Les données et p
 ## Interface graphique Windows (`.pyw`)
 
 Double-cliquer sur `LevelUpDiag-MediKristal.pyw`, ou lancer `RUN_LEVELUPDIAG_UI.bat`. L'interface permet de :
+
+Chemin cible prérempli dans l’UI : `C:\mycode\MediKristal\MediKristal`. Tu peux toujours sélectionner un autre dossier ou une archive ZIP avec les boutons de l’interface.
 
 - choisir un dépôt MediKristal extrait ou une archive ZIP ;
 - choisir `baseline`, `software`, `delivery`, `release` ou `deep` ;

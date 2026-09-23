@@ -19,6 +19,7 @@ from levelupdiag_core.runner import run_campaign
 from run_medikristal_zip import find_target, safe_extract
 
 APP_TITLE = "LevelUpDiag-MediKristal"
+DEFAULT_TARGET = r"C:\mycode\MediKristal\MediKristal"
 CAMPAIGNS = ("baseline", "software", "delivery", "release", "deep")
 VERDICTS = (
     "PASS", "WARN", "FAIL", "SKIP", "BLOCKED", "PARTIAL",
@@ -35,8 +36,15 @@ def is_medikristal_repo(path: Path) -> bool:
     )
 
 
-def detect_target_kind(path: Path) -> str | None:
+def normalize_target_path(path: Path) -> Path:
     path = Path(path)
+    if path.name.lower() == ".git" and path.is_dir():
+        return path.parent
+    return path
+
+
+def detect_target_kind(path: Path) -> str | None:
+    path = normalize_target_path(Path(path))
     if is_medikristal_repo(path):
         return "repository"
     if path.is_file() and path.suffix.lower() == ".zip" and zipfile.is_zipfile(path):
@@ -78,7 +86,7 @@ class LevelUpDiagUI:
         self.finished_levels = 0
         self.total_levels = 0
 
-        self.target_var = StringVar()
+        self.target_var = StringVar(value=DEFAULT_TARGET)
         self.campaign_var = StringVar(value="release")
         self.jobs_var = IntVar(value=3)
         self.fail_fast_var = BooleanVar(value=False)
@@ -232,6 +240,7 @@ class LevelUpDiagUI:
         raw = self.target_var.get().strip()
         target = Path(raw).expanduser() if raw else Path()
         kind = detect_target_kind(target)
+        target = normalize_target_path(target)
         if kind is None:
             messagebox.showerror(APP_TITLE, "Sélectionne la racine d'un dépôt MediKristal ou une archive ZIP valide.")
             return
