@@ -1,3 +1,23 @@
+# Runtime and local diagnostics
 .levelupdiag/
+
+# Python environments/caches and generated test output
+.venv/
+venv/
 __pycache__/
+.pytest_cache/
+.pytest-tmp/
+.mypy_cache/
+.ruff_cache/
 *.pyc
+*.pyo
+.coverage
+.coverage.*
+htmlcov/
+
+# Keep sample-results: they are reference fixtures/examples, not runtime noise.
+
+# Local/generated output
+*.log
+*.tmp
+*.temp
