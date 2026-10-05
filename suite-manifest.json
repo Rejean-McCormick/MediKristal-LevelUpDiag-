@@ -3,14 +3,19 @@
   "suite_version": "1.1.2",
   "files": [
     {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1571,
+      "sha256": "c7182d3a3047c718e2fcbcfdfe3bffc9d6d1a22a08834a4886840f1c13504997"
+    },
+    {
       "path": ".gitignore",
-      "bytes": 82,
-      "sha256": "f6d1f18015145f6cefad7ab9e309e0bb924a38cd04175d64a94e88760d7730be"
+      "bytes": 531,
+      "sha256": "febbe78f2a8cc54e568937ff1c4f6c38951aa54acfc2f1715693a112b0f44b38"
     },
     {
       "path": ".smartignore",
-      "bytes": 33,
-      "sha256": "db65ec8b3bc84021eaf70b754359ecd33837e3522bb2da586fec20be09dfffed"
+      "bytes": 351,
+      "sha256": "2ab2bf8dd749453bb334f2d876151f762f9599e786163a6f58c4ca14c4e98e21"
     },
     {
       "path": "LevelUpDiag-MediKristal.pyw",
@@ -96,6 +101,11 @@
       "path": "docs/SECURITY_MODEL.md",
       "bytes": 808,
       "sha256": "94d14cd38a5ff7f20cf40ee7e3a43b99c333418702ce5c6df604d181c148281f"
+    },
+    {
+      "path": "docs/status/2026-09-22.md",
+      "bytes": 4272,
+      "sha256": "78019c6d65432185e01bed57396a4490cba70bd243e4f0d66e4834bc3e95c72f"
     },
     {
       "path": "levels/__init__.py",
@@ -379,8 +389,8 @@
     },
     {
       "path": "tests/test_suite_manifest.py",
-      "bytes": 1208,
-      "sha256": "9aef49617d31c505d74bd014c270a6604a3c691cdcdb01bce31032c2f5a13d45"
+      "bytes": 784,
+      "sha256": "0bc9a1c7ae02db60d015fc33fc898ff4015538c274f6cced98250ca79e62d013"
     },
     {
       "path": "tests/test_ui_helpers.py",
@@ -396,6 +406,16 @@
       "path": "tests/test_zip_runner.py",
       "bytes": 1026,
       "sha256": "800dbc150adfa973da19c84680dd7d2fafee9fd7201ea287df562ced45cd6a42"
+    },
+    {
+      "path": "tools/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tools/refresh_suite_manifest.py",
+      "bytes": 4957,
+      "sha256": "f07c6e4ec4e267a8411b31f6d2941c0aafb9be0ac49c2216493fc24954ba0842"
     }
   ]
 }

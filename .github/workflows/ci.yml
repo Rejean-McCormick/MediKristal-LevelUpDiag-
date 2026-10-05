@@ -1,0 +1,66 @@
+name: Self-test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  self-test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.13"]
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      LEVELUPDIAG_FAST_CI: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Compile Python sources
+        run: >-
+          python -m compileall -q
+          levelupdiag_core levels probes tests
+          levelupdiag.py levelupdiag_ui.py run_medikristal_zip.py
+
+      - name: CLI smoke test
+        run: python levelupdiag.py list
+
+      - name: Run self-tests
+        run: python -m unittest discover -s tests -v
+
+  strict-integrity:
+    name: Strict suite integrity
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify suite manifest is current
+        run: python tools/refresh_suite_manifest.py --check
+
+      - name: Run strict manifest test
+        run: python -m unittest tests.test_suite_manifest -v
