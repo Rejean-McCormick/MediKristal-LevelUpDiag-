@@ -7,8 +7,12 @@ import re
 import shutil
 import sys
 import tempfile
-import tomllib
 from pathlib import Path
+
+try:
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10 compatibility
+    import tomli as tomllib
 
 from levelupdiag_core.commands import run_command
 
