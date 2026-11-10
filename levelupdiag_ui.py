@@ -19,7 +19,7 @@ from levelupdiag_core.runner import run_campaign
 from run_medikristal_zip import find_target, safe_extract
 
 APP_TITLE = "LevelUpDiag-MediKristal"
-DEFAULT_TARGET = r"C:\mycode\MediKristal\MediKristal"
+DEFAULT_TARGET = r"C:\mycode\Kristal\MediKristal\MediKristal"
 CAMPAIGNS = ("baseline", "software", "delivery", "release", "deep")
 VERDICTS = (
     "PASS", "WARN", "FAIL", "SKIP", "BLOCKED", "PARTIAL",

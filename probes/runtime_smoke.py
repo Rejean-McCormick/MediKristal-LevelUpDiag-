@@ -32,7 +32,7 @@ with TestClient(app) as client:
       'security_headers': caps.headers.get('cache-control')=='no-store' and caps.headers.get('x-content-type-options')=='nosniff' and 'frame-ancestors' in caps.headers.get('content-security-policy',''),
     }
     if caps.status_code==200:
-      out['details']['capabilities']={x['name']:x['state'] for x in caps.json().get('capabilities',[])}
+      out['details']['capabilities']={x['name']:{'state':x.get('state'), 'supported_uses':x.get('supported_uses'), 'limitations':x.get('limitations')} for x in caps.json().get('capabilities',[]) if isinstance(x,dict) and isinstance(x.get('name'),str)}
     out['details']['runtime_api_routes']=sum(1 for r in app.routes if r.path.startswith('/api/v1') for m in (r.methods or set()) if m in {'GET','POST','PUT','PATCH','DELETE'})
 print(json.dumps(out,ensure_ascii=False))
 raise SystemExit(0 if all(out['checks'].values()) else 1)

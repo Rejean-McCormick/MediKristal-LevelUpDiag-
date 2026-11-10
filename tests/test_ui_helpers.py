@@ -27,7 +27,7 @@ class UIHelperTests(unittest.TestCase):
             self.assertIsNone(detect_target_kind(root / "missing.zip"))
 
     def test_default_target_is_requested_windows_repo_path(self):
-        self.assertEqual(DEFAULT_TARGET, r"C:\mycode\MediKristal\MediKristal")
+        self.assertEqual(DEFAULT_TARGET, r"C:\mycode\Kristal\MediKristal\MediKristal")
 
     def test_summary_text_contains_verdict_and_levels(self):
         rendered = summary_text({

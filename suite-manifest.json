@@ -4,18 +4,23 @@
   "files": [
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 1571,
-      "sha256": "c7182d3a3047c718e2fcbcfdfe3bffc9d6d1a22a08834a4886840f1c13504997"
+      "bytes": 1606,
+      "sha256": "b411c0d7ac7a7798174fa9cbb41c80840612d914b109279290924b913d062871"
     },
     {
       "path": ".gitignore",
-      "bytes": 531,
-      "sha256": "febbe78f2a8cc54e568937ff1c4f6c38951aa54acfc2f1715693a112b0f44b38"
+      "bytes": 632,
+      "sha256": "d774be3c4461cc65aa5903040ee627eccd1a4454427edb3062a3de4cf19aced7"
     },
     {
       "path": ".smartignore",
       "bytes": 351,
       "sha256": "2ab2bf8dd749453bb334f2d876151f762f9599e786163a6f58c4ca14c4e98e21"
+    },
+    {
+      "path": "Launch_MULTiSmartDump.lnk",
+      "bytes": 1359,
+      "sha256": "597cb480ff60a1169b72f50df355256fefb23e5bcc03b382b1be07428b14821b"
     },
     {
       "path": "LevelUpDiag-MediKristal.pyw",
@@ -24,8 +29,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5570,
-      "sha256": "afe3799f20474956c4d0b00331bf54fb8eac8740aa4e8581a0a4db69715b3188"
+      "bytes": 3815,
+      "sha256": "8f100f767aee661be168833e651c5412012adc99388411dbe7d2fefb1d8f78a4"
     },
     {
       "path": "RUN_LEVELUPDIAG.bat",
@@ -59,8 +64,8 @@
     },
     {
       "path": "SUITE_VALIDATION.md",
-      "bytes": 2266,
-      "sha256": "2d8c84993381c4701dc87abca4a4a9a6b060babf08cc89254adbe8550c61a0ec"
+      "bytes": 3606,
+      "sha256": "df34b9cba1e96afef519e6ae6203f3434ab6682b57e8356aeccaf896330f0525"
     },
     {
       "path": "docs/ADAPTATION_GUIDE.md",
@@ -83,14 +88,19 @@
       "sha256": "1b94aa7b616396ebdf267dd6874db08d50d2c6d6fefbd9bab427aff2a461112e"
     },
     {
+      "path": "docs/FINAL_SYSTEM_VALIDATION_BOUNDARY.md",
+      "bytes": 4599,
+      "sha256": "4b695bfccfe4c1e46556db9b3812e5778a6b8caa16009b3563d369e766b336dd"
+    },
+    {
       "path": "docs/LEVEL_CONTRACT.md",
       "bytes": 1355,
       "sha256": "2eacb2740c3f5b680039bf2c8e385d64549f9596c9c455ba020d99f8b80d76f8"
     },
     {
       "path": "docs/MEDIKRISTAL_VALIDATION_MODEL.md",
-      "bytes": 2189,
-      "sha256": "e2a211ac5d200cc6e4e5efde7b566296d04ce0b5f3114d3b45e666e965390c6e"
+      "bytes": 2613,
+      "sha256": "80942fd13fa38cffc15fac7399253aa9ba19c8d57672c83ea9913c1f848174ac"
     },
     {
       "path": "docs/RESULT_MODEL.md",
@@ -114,8 +124,8 @@
     },
     {
       "path": "levels/_mk_common.py",
-      "bytes": 2983,
-      "sha256": "8bae487b39fd6d82f901fef506db672327de3e9920a6644a06426f1c278e6174"
+      "bytes": 3276,
+      "sha256": "3b68127a19eccad0bee9afef5b349e0b06d9fdea1770565258652bbe26bdc703"
     },
     {
       "path": "levels/mk10_identity_layout.py",
@@ -129,8 +139,8 @@
     },
     {
       "path": "levels/mk30_runtime_smoke.py",
-      "bytes": 2681,
-      "sha256": "0acd3fcb218f7f614eb0f896a471b376884e28ea728f3304abf29de271a12a0c"
+      "bytes": 3991,
+      "sha256": "37063cd15c9b922014ba7a342a5d4b212fa1d9f91f963005279e58ac410008ad"
     },
     {
       "path": "levels/mk40_migrations.py",
@@ -139,8 +149,8 @@
     },
     {
       "path": "levels/mk50_packaging.py",
-      "bytes": 5858,
-      "sha256": "8bccbef2f558ae825d1f0af6e63b386c435100f68de5a4ccf95268eee83fad2a"
+      "bytes": 10666,
+      "sha256": "72a71ab2915ab5c3bd2ab6eb0006d83e6da8031deedcde5cf231951a0c97ee5c"
     },
     {
       "path": "levels/mk60_reproducibility.py",
@@ -149,8 +159,8 @@
     },
     {
       "path": "levels/mk70_claims.py",
-      "bytes": 6632,
-      "sha256": "14f5b803b7ec90e329f862234cfaae7a2759cd48a68f4ae92091b1515df0ba87"
+      "bytes": 6760,
+      "sha256": "541d5cf2b447f7223b1af6a168cc6c111e145e1c188dc082013cd31484761444"
     },
     {
       "path": "levels/mk80_deploy.py",
@@ -194,8 +204,8 @@
     },
     {
       "path": "levelupdiag.config.json",
-      "bytes": 2564,
-      "sha256": "486b267b3db387063c44f4e622270200ce688a12701078d917536c94e44039b2"
+      "bytes": 2611,
+      "sha256": "02c9305a204d7d07b76371fe4a5a4eec947be48c759eebcf277d3902517f4240"
     },
     {
       "path": "levelupdiag.config.local.example.json",
@@ -274,18 +284,18 @@
     },
     {
       "path": "levelupdiag_ui.py",
-      "bytes": 23711,
-      "sha256": "0e693ddb446ffd6bef714a204fcd82b09755764d66130940770f792bc0881205"
+      "bytes": 23719,
+      "sha256": "10b4cd78f53c9acd21cc2aacb6383cc315141e13fbb475ba56906ba25d2af827"
     },
     {
       "path": "probes/runtime_smoke.py",
-      "bytes": 2268,
-      "sha256": "87b8e2e775820056144c595972ea3cf8f5f6b2a707548ccbd15e4aa384757061"
+      "bytes": 2416,
+      "sha256": "809d8846eb7e450c18d4d8545f918ec825ca7d2c718a01fd8df2d561328f0d68"
     },
     {
       "path": "pyproject.toml",
-      "bytes": 253,
-      "sha256": "517a5368558606102b669c470ec2041556c415458749c60866b4a505c25bd65d"
+      "bytes": 295,
+      "sha256": "580aa76b0d16a5247798135d2d21ce3b8f90987072db545db8a0aa69ff9f7769"
     },
     {
       "path": "run_medikristal_zip.py",
@@ -373,6 +383,11 @@
       "sha256": "ba49555964bcd88e52cd0d0732138eb489b25b777da4f0e3e349d66e2dda7647"
     },
     {
+      "path": "tests/test_cross_owner_integrity.py",
+      "bytes": 4892,
+      "sha256": "23e3926ef535103e6833e387a2c90ff45279f5d504848c5609bcf63faaf9831d"
+    },
+    {
       "path": "tests/test_manifest.py",
       "bytes": 404,
       "sha256": "e7c16543a7efc9768881fe3350bed7e058cabd73a9b189d092bdd53f22284584"
@@ -394,8 +409,8 @@
     },
     {
       "path": "tests/test_ui_helpers.py",
-      "bytes": 1864,
-      "sha256": "5a2927a50b27e0e7ec9e56344af80f5bb58cb0ec1b618ac1d42ce0f6831426b2"
+      "bytes": 1872,
+      "sha256": "87e02751a6b2fc10213408fe4c00f56e4e85e433c744450c05c3cebf82104865"
     },
     {
       "path": "tests/test_verdicts.py",

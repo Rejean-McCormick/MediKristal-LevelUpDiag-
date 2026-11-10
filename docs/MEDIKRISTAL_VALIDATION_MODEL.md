@@ -38,3 +38,7 @@ Les fichiers régénérés sont comparés à ceux du dépôt d'origine. La cible
 ## Déploiement
 
 `MK80` valide statiquement le contrat de déploiement. Il ne démarre pas Docker. Une vraie gate de production doit ajouter un environnement PostgreSQL/Docker et des tests de concurrence multi-processus.
+
+## Final-system software assurance interface
+
+See [the independent FC-18/FC-20 validation boundary](FINAL_SYSTEM_VALIDATION_BOUNDARY.md). MK50 now checks the complete delivered source inventory and the exact lockfile digest/extras; MK30 checks all advertised supported uses and limitations rather than relying solely on external state labels. A software-level PASS remains unrelated to medical or regulatory qualification.

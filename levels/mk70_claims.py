@@ -64,9 +64,10 @@ def run(cfg, report):
     with tempfile.TemporaryDirectory(prefix='levelupdiag-mk-cov-') as td:
         covjson=Path(td)/'coverage.json'
         cenv=python_env(root,{'COVERAGE_FILE':str(Path(td)/'.coverage')})
-        cov=run_cmd(root,[sys.executable,'-m','pytest','--cov=medikristal',f'--cov-report=json:{covjson}','-q','-p','no:cacheprovider'],cwd=root/'backend',timeout=600,env=cenv)
+        cov=run_cmd(root,[sys.executable,'-m','pytest','-p','pytest_cov','--cov=medikristal',f'--cov-report=json:{covjson}','-q','-p','no:cacheprovider'],cwd=root/'backend',timeout=600,env=cenv)
         if cov['exit_code']!=0 or cov['timed_out'] or not covjson.is_file():
-            blocked='unrecognized arguments' in ((cov.get('stdout_tail') or '')+(cov.get('stderr_tail') or '')).lower()
+            output=((cov.get('stdout_tail') or '')+(cov.get('stderr_tail') or '')).lower()
+            blocked=any(marker in output for marker in ('unrecognized arguments', 'no module named pytest_cov', 'error importing plugin'))
             report.add('medikristal.evidence.coverage_remeasure','BLOCKED' if blocked else 'FAIL','evidence','Coverage could not be independently remeasured in this environment.',evidence=cov,recommendation='Install pytest-cov/coverage.py and the locked MediKristal test dependencies to qualify the documented coverage claim.')
         else:
             data=json.loads(covjson.read_text(encoding='utf-8')); pct=float(data['totals']['percent_covered']); rounded=round(pct)

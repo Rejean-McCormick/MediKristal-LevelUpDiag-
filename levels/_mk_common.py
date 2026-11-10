@@ -44,6 +44,9 @@ def sha256(path: Path) -> str:
 def python_env(root: Path, extra: dict | None = None) -> dict:
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
+    # Isolate MediKristal campaigns from unrelated globally installed pytest
+    # plugins; pytest-cov is loaded explicitly in the coverage campaign.
+    env["PYTEST_DISABLE_PLUGIN_AUTOLOAD"] = "1"
     env["PYTHONPATH"] = str(root / "backend") + os.pathsep + str(root)
     if extra:
         env.update({str(k): str(v) for k, v in extra.items()})

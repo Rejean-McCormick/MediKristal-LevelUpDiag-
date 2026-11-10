@@ -1,5 +1,15 @@
 # Validation de LevelUpDiag-MediKristal
 
+## Current branch 09 evidence — 2026-11-09
+
+- **22/22 diagnostic self-tests PASS**, including seven independent negative-case tests for manifest omission/path traversal, exact lock/SBOM/extras and prohibited clinical-capability claims.
+- MediKristal owner source: **73/73 synthetic API tests PASS**, current documentary validation **208 PASS / 0 FAIL**, and code coverage **87.24% global / 86.25% API** in the local Python 3.13.5 test environment.
+- The reconstructed 142-byte `backend/requirements.lock` matches the *original* MediKristal manifest SHA-256. The owner source manifest and CycloneDX SBOM currently agree.
+- Diagnostic `baseline`: `WARN` overall (7 `PASS` plus one expected context `WARN` because extracted ZIP has no Git metadata). `MK30`: `PASS` (isolated runtime smoke and engineering-only capability guard). `MK50`: **FAIL** for missing release wheel and `dist/SHA256SUMS`; its source-manifest and SBOM/lock subchecks **PASS**.
+- The **90% minimum release coverage gate is NOT MET**. No release, patient-care or regulatory qualification is asserted. The current source snapshot also lacks the binary wheel, real Docker/PostgreSQL environment and partner validation.
+
+The September 2026 sample reports below describe an earlier source snapshot and must not be substituted for this branch's current qualification status.
+
 Date : 2026-09-22
 
 ## Auto-tests de la suite

@@ -6,7 +6,7 @@ This standalone diagnostic suite orchestrates MediKristal's own validators and p
 
 ## Windows application and target selection
 
-Double-click `LevelUpDiag-MediKristal.pyw` or open `RUN_LEVELUPDIAG_UI.bat`. The GUI accepts an extracted checkout or a ZIP archive and offers `baseline`, `software`, `delivery`, `release` and `deep` campaigns, progress, findings and evidence browsing. The default GUI target is `C:\mycode\MediKristal\MediKristal` but can be changed.
+Double-click `LevelUpDiag-MediKristal.pyw` or open `RUN_LEVELUPDIAG_UI.bat`. The GUI accepts an extracted checkout or a ZIP archive and offers `baseline`, `software`, `delivery`, `release` and `deep` campaigns, progress, findings and evidence browsing. The default GUI target is `C:\mycode\Kristal\MediKristal\MediKristal` but can be changed.
 
 The Tkinter interface uses Python's standard library. ZIP extraction is temporary and validates traversal paths; evidence is copied to `levelupdiag_zip_runs/`.
 
@@ -23,6 +23,10 @@ python run_medikristal_zip.py /path/to/MediKristal.zip release
 
 Reports are stored in `.levelupdiag/runs/<run-id>/` for checkouts or under `levelupdiag_zip_runs/` for ZIP runs.
 
+## Current branch 09 engineering observations
+
+The current source/diagnostic pair passes the source-manifest and lock/SBOM checks, and 22 diagnostic self-tests pass. MediKristal synthetic tests pass (73/73), while its measured 87.24% global coverage is **below** the configured 90% release threshold. The supplied source snapshot has no wheel/signature receipt, so the full delivery/release gate is **not qualified**. See [the dated engineering report](SUITE_VALIDATION.md).
+
 ## Campaign boundaries
 
 | Campaign | Additional checks |
@@ -34,6 +38,10 @@ Reports are stored in `.levelupdiag/runs/<run-id>/` for checkouts or under `leve
 | `deep` | Alias for `release` |
 
 Dedicated MediKristal levels cover: identity/layout (MK10), contracts/traceability (MK20), API smoke (MK30), migration cycles (MK40), packaging/provenance (MK50), regeneration (MK60), delivery claims (MK70) and static deployment configuration (MK80).
+
+## Final-system interoperability
+
+[Engineering qualification boundary (FC-18 and FC-20)](docs/FINAL_SYSTEM_VALIDATION_BOUNDARY.md) documents the two-sided source-lock, source-manifest and runtime-capability checks. Clinical and regulatory approval remain outside the diagnostic tool.
 
 ## Verdict and safety
 

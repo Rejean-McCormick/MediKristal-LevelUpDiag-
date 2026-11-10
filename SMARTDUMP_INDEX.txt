@@ -1,0 +1,98 @@
+SMART DUMPER INDEX
+==================
+generated_at: 2026-11-09T16:35:03.354933
+source_root: C:\mycode\Kristal\MediKristal\LevelUpDiag-MediKristal
+mode: snapshot
+zip_file: LevelUpDiag-MediKristal_Code_snapshot.zip
+embedded_index: SMARTDUMP_INDEX.txt
+file_count: 85
+total_bytes: 209115
+compression: ZIP_DEFLATED level 1
+
+FILES
+-----
+.github/workflows/ci.yml	1655 bytes
+.gitignore	632 bytes
+.smartignore	351 bytes
+docs/ADAPTATION_GUIDE.md	978 bytes
+docs/AI_ADAPTATION_CONTRACT.json	1167 bytes
+docs/ARCHITECTURE.md	1105 bytes
+docs/CONFIG_REFERENCE.md	986 bytes
+docs/LEVEL_CONTRACT.md	1355 bytes
+docs/MEDIKRISTAL_VALIDATION_MODEL.md	2189 bytes
+docs/RESULT_MODEL.md	866 bytes
+docs/SECURITY_MODEL.md	808 bytes
+docs/status/2026-09-22.md	4272 bytes
+Launch_MULTiSmartDump.lnk	1359 bytes
+levels/__init__.py	0 bytes
+levels/_mk_common.py	3078 bytes
+levels/mk10_identity_layout.py	4291 bytes
+levels/mk20_contract_traceability.py	6650 bytes
+levels/mk30_runtime_smoke.py	2681 bytes
+levels/mk40_migrations.py	2302 bytes
+levels/mk50_packaging.py	5858 bytes
+levels/mk60_reproducibility.py	3265 bytes
+levels/mk70_claims.py	6632 bytes
+levels/mk80_deploy.py	3416 bytes
+levels/n00_diagnostic_integrity.py	1543 bytes
+levels/n01_target_context.py	2562 bytes
+levels/n02_repository_inventory.py	2237 bytes
+levels/n03_repository_hygiene.py	1965 bytes
+levels/n04_tooling_discovery.py	2428 bytes
+levels/n05_declared_validations.py	3050 bytes
+levels/n06_security_hygiene.py	3115 bytes
+LevelUpDiag-MediKristal.pyw	89 bytes
+levelupdiag.config.json	2564 bytes
+levelupdiag.config.local.example.json	346 bytes
+levelupdiag.py	310 bytes
+levelupdiag_core/__init__.py	134 bytes
+levelupdiag_core/cli.py	4183 bytes
+levelupdiag_core/commands.py	2025 bytes
+levelupdiag_core/config.py	1788 bytes
+levelupdiag_core/manifest.py	1735 bytes
+levelupdiag_core/report.py	2162 bytes
+levelupdiag_core/runner.py	11391 bytes
+levelupdiag_core/scanner.py	971 bytes
+levelupdiag_core/util.py	2388 bytes
+levelupdiag_core/vcs.py	844 bytes
+levelupdiag_core/verdicts.py	1641 bytes
+levelupdiag_core/worker.py	1466 bytes
+levelupdiag_manifest.json	8509 bytes
+levelupdiag_ui.py	23711 bytes
+probes/runtime_smoke.py	2268 bytes
+pyproject.toml	295 bytes
+README.md	3046 bytes
+RUN_LEVELUPDIAG.bat	78 bytes
+RUN_LEVELUPDIAG.sh	77 bytes
+RUN_LEVELUPDIAG_MEDIKRISTAL.bat	278 bytes
+RUN_LEVELUPDIAG_MEDIKRISTAL.sh	308 bytes
+RUN_LEVELUPDIAG_UI.bat	281 bytes
+run_medikristal_zip.py	2509 bytes
+sample-results/2026-09-22/MK10-result.json	2744 bytes
+sample-results/2026-09-22/MK20-result.json	2780 bytes
+sample-results/2026-09-22/MK30-result.json	2341 bytes
+sample-results/2026-09-22/MK40-result.json	3485 bytes
+sample-results/2026-09-22/MK50-result.json	2299 bytes
+sample-results/2026-09-22/MK60-result.json	3724 bytes
+sample-results/2026-09-22/MK70-result.json	3511 bytes
+sample-results/2026-09-22/MK80-result.json	2397 bytes
+sample-results/2026-09-22/N05-result.json	1815 bytes
+sample-results/2026-09-22/software-summary.json	2395 bytes
+sample-results/2026-09-22/software-summary.txt	553 bytes
+sample-results/README.md	588 bytes
+SAMPLE_VALIDATION_MEDIKRISTAL_FINAL.md	3006 bytes
+schemas/campaign-summary.schema.json	745 bytes
+schemas/report.schema.json	778 bytes
+suite-manifest.json	13546 bytes
+SUITE_VALIDATION.md	2266 bytes
+tests/__init__.py	0 bytes
+tests/test_commands.py	429 bytes
+tests/test_manifest.py	404 bytes
+tests/test_medikristal_profile.py	1151 bytes
+tests/test_runner_blocked_results.py	739 bytes
+tests/test_suite_manifest.py	784 bytes
+tests/test_ui_helpers.py	1864 bytes
+tests/test_verdicts.py	595 bytes
+tests/test_zip_runner.py	1026 bytes
+tools/__init__.py	0 bytes
+tools/refresh_suite_manifest.py	4957 bytes

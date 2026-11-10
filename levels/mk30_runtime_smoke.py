@@ -4,6 +4,29 @@ from pathlib import Path
 from ._mk_common import mkcfg, python_env, run as run_cmd, target, tool
 
 
+def assess_engineering_only_capabilities(capabilities: dict, required_states: dict) -> list[dict]:
+    """Independent no-clinical-claim gate for the synthetic 0.2.0 software profile."""
+    errors = []
+    if not isinstance(capabilities, dict) or not capabilities:
+        return [{'reason': 'missing_capability_evidence'}]
+    for name, capability in capabilities.items():
+        if not isinstance(capability, dict):
+            errors.append({'name': name, 'reason': 'invalid_capability_shape'})
+            continue
+        uses = capability.get('supported_uses')
+        limitations = capability.get('limitations')
+        if uses != ['engineering']:
+            errors.append({'name': name, 'reason': 'unqualified_supported_use', 'value': uses})
+        if not isinstance(limitations, list) or not limitations or not all(isinstance(x, str) and x.strip() for x in limitations):
+            errors.append({'name': name, 'reason': 'missing_limitations'})
+    for name, states in required_states.items():
+        record = capabilities.get(name)
+        state = record.get('state') if isinstance(record, dict) else None
+        if state not in states:
+            errors.append({'name': name, 'reason': 'unauthorized_external_state', 'state': state, 'allowed': states})
+    return errors
+
+
 def run(cfg, report):
     root=target(cfg); expected=mkcfg(cfg)
     with tempfile.TemporaryDirectory(prefix='levelupdiag-mk-runtime-') as td:
@@ -26,12 +49,11 @@ def run(cfg, report):
                recommendation=None if ok else 'Inspect runtime import/startup, database readiness and HTTP contract behavior.')
     if not payload: return
     caps=payload.get('details',{}).get('capabilities',{})
-    bad=[]
-    for name, allowed in expected.get('required_external_capability_states',{}).items():
-        if caps.get(name) not in allowed: bad.append({'name':name,'state':caps.get(name),'allowed':allowed})
+    bad=assess_engineering_only_capabilities(caps, expected.get('required_external_capability_states',{}))
     report.add('medikristal.runtime.external_capabilities_honest','FAIL' if bad else 'PASS','runtime',
-               'External/partner capabilities are not advertised as available without configuration.' if not bad else 'An external capability is advertised in a state forbidden by the delivery policy.',
-               evidence=bad or {k:caps.get(k) for k in expected.get('required_external_capability_states',{})})
+               'Every reported capability is engineering-only with explicit limitations; disabled external integrations remain unavailable.' if not bad else
+               'A runtime capability advertises an unqualified use, lacks limitations or exposes an unauthorized external state.',
+               evidence=bad or {'capabilities_checked':len(caps), 'external_names':sorted(expected.get('required_external_capability_states',{}))})
     route_count=payload.get('details',{}).get('runtime_api_routes')
     exp=int(expected.get('expected_operations',80))
     report.add('medikristal.runtime.route_count','PASS' if route_count==exp else 'FAIL','runtime',
