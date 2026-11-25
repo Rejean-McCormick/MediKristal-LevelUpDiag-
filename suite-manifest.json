@@ -68,6 +68,11 @@
       "sha256": "df34b9cba1e96afef519e6ae6203f3434ab6682b57e8356aeccaf896330f0525"
     },
     {
+      "path": "ZmartZnap.pyw",
+      "bytes": 22889,
+      "sha256": "70775b94ff616ed9efdb3d6b989639fa3cd22a250f1389fec485791d161df1ea"
+    },
+    {
       "path": "docs/ADAPTATION_GUIDE.md",
       "bytes": 978,
       "sha256": "e744f1f35d0dacfac16ddd0f8c850c0e4a260fb94205238f24f1b14726c61c80"
@@ -294,8 +299,8 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 295,
-      "sha256": "580aa76b0d16a5247798135d2d21ce3b8f90987072db545db8a0aa69ff9f7769"
+      "bytes": 487,
+      "sha256": "ca8076de82005e72e6d047228de5f3dbef7ec70b8e6e61f95a58733fc0676784"
     },
     {
       "path": "run_medikristal_zip.py",
